@@ -17,9 +17,10 @@ class School
     @roster[grade]
   end
   def sort
-    sorted_roster = @roster.sort_by {|k, v| k}.to_h
+    roster_by_grade = @roster.sort_by {|k, v| k}.to_h
+    
+    sorted_roster = roster_by_grade.keys.map {|grade| sorted_roster[grade].sort!}
     binding.pry
-    sorted_roster.map {|grade, name| sorted_roster[grade].sort!}
     sorted_roster
   end
 end
