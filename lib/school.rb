@@ -18,7 +18,7 @@ class School
   end
   def sort
     sorted_roster = @roster.sort_by {|k, v| k}
-    sorted_roster = sorted_roster.map {|grade| sorted_roster[grade].sort!}
+    sorted_roster = sorted_roster.map {|grade, name| sorted_roster[grade].sort!}
     sorted_roster
   end
 end
